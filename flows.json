@@ -1,0 +1,177 @@
+[
+    {
+        "id": "1a2b3c4d5e6f",
+        "type": "tab",
+        "label": "Demo Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "http_in_1",
+        "type": "http in",
+        "z": "1a2b3c4d5e6f",
+        "name": "Test HTTP",
+        "url": "/hello",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "function_1",
+                "387e10c8e5f5a9ef"
+            ]
+        ]
+    },
+    {
+        "id": "function_1",
+        "type": "function",
+        "z": "1a2b3c4d5e6f",
+        "name": "Add Message",
+        "func": "msg.payload = { message: 'Hello from Node-RED!' };\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 100,
+        "wires": [
+            [
+                "debug_1",
+                "http_response_1"
+            ]
+        ]
+    },
+    {
+        "id": "http_response_1",
+        "type": "http response",
+        "z": "1a2b3c4d5e6f",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 550,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "debug_1",
+        "type": "debug",
+        "z": "1a2b3c4d5e6f",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "387e10c8e5f5a9ef",
+        "type": "debug",
+        "z": "1a2b3c4d5e6f",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "url",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 280,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "794541cd3bb57cc0",
+        "type": "http in",
+        "z": "1a2b3c4d5e6f",
+        "name": "Test HTTP",
+        "url": "/hello1",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "3788f97a3ca37437",
+                "8708ee3c86b245f6"
+            ]
+        ]
+    },
+    {
+        "id": "3788f97a3ca37437",
+        "type": "function",
+        "z": "1a2b3c4d5e6f",
+        "name": "Add Message",
+        "func": "msg.payload = { message: 'Auto update flow' };\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "ebbf208652f4c778",
+                "34de1b819624565f"
+            ]
+        ]
+    },
+    {
+        "id": "34de1b819624565f",
+        "type": "http response",
+        "z": "1a2b3c4d5e6f",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 580,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ebbf208652f4c778",
+        "type": "debug",
+        "z": "1a2b3c4d5e6f",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "8708ee3c86b245f6",
+        "type": "debug",
+        "z": "1a2b3c4d5e6f",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "url",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 440,
+        "wires": []
+    }
+]
