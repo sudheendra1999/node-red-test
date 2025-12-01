@@ -1,0 +1,12 @@
+{
+  "name": "genenode-flows",
+  "version": "1.0.0",
+  "description": "node flow generator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "author": "Sudheendra",
+  "license": "ISC"
+}
