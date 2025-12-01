@@ -1,0 +1,74 @@
+[
+    {
+        "id": "tab_delay_inject",
+        "type": "tab",
+        "label": "Delay Inject Debug",
+        "disabled": false,
+        "info": "Inject → Delay → Debug"
+    },
+    {
+        "id": "inject_node_1",
+        "type": "inject",
+        "z": "tab_delay_inject",
+        "name": "Inject timestamp",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 120,
+        "wires": [
+            [
+                "delay_node_1"
+            ]
+        ]
+    },
+    {
+        "id": "delay_node_1",
+        "type": "delay",
+        "z": "tab_delay_inject",
+        "name": "Delay 2 seconds",
+        "pauseType": "delay",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "debug_node_1"
+            ]
+        ]
+    },
+    {
+        "id": "debug_node_1",
+        "type": "debug",
+        "z": "tab_delay_inject",
+        "name": "Debug Output",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 120,
+        "wires": []
+    }
+]
